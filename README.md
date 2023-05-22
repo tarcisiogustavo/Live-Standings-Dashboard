@@ -4,6 +4,9 @@ Welcome to the Live Standings Dashboard! This web-based dashboard allows you to 
 
 ![WebApp](https://cdn.discordapp.com/attachments/1110275710741917747/1110275753116971099/Pagina_exemplo.png)
 
+## Future Updates and Real-Time Data
+
+Please note that the current version of the Live Standings Dashboard requires manual refresh by reloading the page (using F5) to update the data. However, in the future, I plan to implement real-time data updates. If you make any improvements or additions to the project and would like to contribute, please feel free to submit a pull request. I will review and consider integrating the changes into the main project.
 
 ### How to Use
 
