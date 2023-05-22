@@ -23,7 +23,7 @@ Welcome to the Live Standings Dashboard! This web-based dashboard allows you to 
 
 3. **Set Up Google Sheets API**
 
-   - Go to the [Easy Data documentation website](https://easy-data.mdbgo.io/).
+   - Go to the <a href="https://easy-data.mdbgo.io/" target="_blank">Easy Data documentation website</a>
    - Follow the documentation and tutorials provided to set up the Google Sheets API connection.
    - Make sure to obtain the necessary credentials and API key.
 
