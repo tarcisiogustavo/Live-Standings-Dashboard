@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+
+
+:root {
+    --color0: #5f2c82; /*Cor Primaria do background */
+    --color1: #49a09d; /*Cor Secundaria do background */
+    --color2: rgba(0,0,0,0.1); 
+    --color3: rgba(56, 57, 58, 0.459); /* Cor do corpo da tabela */
+    --color4: #566299; /* Cor do cabeçalho da tabela */
+
+    --fonte-title: 'Permanent Marker', cursive; /*Fonte do titulo*/
+    --fonte-body: 'Bakbak One', cursive; /*Fonte do corpo*/
+}
+
+html, body {
+	height: 98%;
+}
+
+body {
+	margin: 0;
+	background: linear-gradient(45deg, var(--color0), var(--color1)) center center no-repeat fixed;
+    background-size: cover;
+	font-family: var(--fonte-body);
+	font-weight: 100;
+}
+
+.title {
+    position:relative;
+    font-family: var(--fonte-title);
+    text-align: center;
+
+}
+
+/*
+.container {
+    display: flex;
+}
+
+.container .table {
+    flex-basis: 50%;
+    padding: 10px;
+}
+*/
+
+.containerleft {
+	position: absolute;
+    top: 15%;
+    left: 10%;
+}
+
+.containerright {
+	position: absolute;
+	top: 15%;
+	right: 10%;
+
+}
+
+table {
+	width: 450px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+img {
+    height: 40px;
+    width: 40px;
+
+}
+
+th,td {
+	padding: 10px;
+	background-color: var(--color3);
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+.headp {
+    padding-right: 35px;
+    text-align: right;
+}
+
+.headb {
+    text-align: center;
+}
+
+thead, th {
+		background-color: var(--color4);
+}
+
+

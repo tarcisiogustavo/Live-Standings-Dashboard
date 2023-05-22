@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Esports Table</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/table.css" />
+    <style>
+
+    </style>
+  </head>
+
+  <body>
+    <h1 class="title">
+      <img src="img/Invpng.png" alt="" /> CLASSIFICAÇÃO
+    </h1>
+    <div class="container">
+      <div class="table containerleft">
+        <table class="table">
+          <thead class="left" id="table-head-left"></thead>
+          <tbody id="table-body-left"></tbody>
+        </table>
+      </div>
+
+      <div class="table containerright">
+        <table class="table">
+          <thead class="right" id="table-head-right"></thead>
+          <tbody id="table-body-right"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- MDB ESSENTIAL -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Google API -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <!-- easyData -->
+    <script type="text/javascript" src="js/easyData-google-sheets.js"></script>
+
+    <!-- easyData - Creating table -->
+    <script>
+      {
+        // Your API KEY
+        const API_KEY = "YOUR_API_KEY";
+
+        function displayResult2(response) {
+        let tableHeadLeft = "";
+        let tableBodyLeft = "";
+        let tableHeadRight = "";
+        let tableBodyRight = "";
+
+        // Adiciona as informações iniciais no thead da tabela esquerda
+        const tableRowHeadLeft = `
+          <th class="headp" colspan="4">${response.result.values[0][0]}</th>
+          <th class="headb">${response.result.values[0][1]}</th>
+          <th class="headb">${response.result.values[0][2]}</th>
+        `;
+        tableHeadLeft += `<tr>${tableRowHeadLeft}</tr>`;
+
+        // Adiciona as informações iniciais no thead da tabela direita
+        const tableRowHeadRight = `
+          <th class="headp" colspan="4">${response.result.values[0][0]}</th>
+          <th class="headb">${response.result.values[0][1]}</th>
+          <th class="headb">${response.result.values[0][2]}</th>
+        `;
+        tableHeadRight += `<tr>${tableRowHeadRight}</tr>`;
+
+        // Itera sobre os dados da planilha, a partir do índice 1
+      for (let index = 1; index < response.result.values.length; index++) {
+        const row = response.result.values[index];
+        const tableRow = `
+          <td>${row[0]}</td>
+          <td><img src="${row[1]}" alt=""></td>
+          <td>${row[2]}</td>
+          <td>${row[3]}</td>
+          <td>${row[4]}</td>
+          <td>${row[5]}</td>
+        `;
+        if (index <= 6) {
+          tableBodyLeft += `<tr>${tableRow}</tr>`;
+        } else {
+          tableBodyRight += `<tr>${tableRow}</tr>`;
+        }
+      }
+
+        document.getElementById("table-head-left").innerHTML = tableHeadLeft;
+        document.getElementById("table-body-left").innerHTML = tableBodyLeft;
+        document.getElementById("table-head-right").innerHTML = tableHeadRight;
+        document.getElementById("table-body-right").innerHTML = tableBodyRight;
+    }
+
+
+        function loadData() {
+          // Spreadsheet ID
+          const spreadsheetId = "Your SpreadShet ID";
+          const range = "A1:F13";
+          getPublicValues({ spreadsheetId, range }, displayResult2);
+        }
+
+        window.addEventListener("load", (e) => {
+          initOAuthClient({ apiKey: API_KEY });
+        });
+
+        document.addEventListener("gapi-loaded", (e) => {
+          loadData();
+        });
+      }
+    </script>
+  </body>
+</html>
