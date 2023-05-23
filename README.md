@@ -16,9 +16,8 @@ Welcome to the Live Standings Dashboard! This web-based dashboard allows you to 
 
    - On your local machine, open the terminal or command prompt.
    - Clone the repository by running the following command:
-   -  (Replace `<your-username>` with your GitHub username in the command below:)
      ```
-     git clone https://github.com/your-username/Live-Standings-Dashboard.git
+     git clone https://github.com/tarcisiogustavo/Live-Standings-Dashboard.git
      ```
 
 3. **Set Up Google Sheets API**
